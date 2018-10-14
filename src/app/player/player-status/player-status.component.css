@@ -1,0 +1,54 @@
+.games {
+  padding: 15px 0px;
+  text-align: center;
+}
+
+.games button {
+  padding: 5px 10px;
+  font-size: 1.2em;
+  color: steelblue;
+  background-color: inherit;
+  border: 0px;
+  border-right: 1px solid steelblue;
+}
+
+.games button:last-child {
+  border-right: 0px;
+}
+
+td button {
+  margin-right: 10px;
+  padding: 4px 8px;
+  font-size: 1em;
+  color: black;
+  background-color: snow;
+  border: 1px solid black;
+  border-radius: 2px;
+}
+
+td button:last-child {
+  margin-right: 0px;
+}
+
+td button.playing {
+  color: snow;
+  background-color: green;
+}
+
+td button.not-playing {
+  color: snow;
+  background-color: red;
+}
+
+td button.undecided {
+  background-color: yellow;
+}
+
+.center {
+  text-align: center;
+}
+
+.bold {
+  font-weight: bold;
+  text-decoration: underline;
+}
