@@ -24,7 +24,7 @@ export class PlayerListComponent implements OnInit {
   onDelete(player: Player) {
     this.playerService.removePlayer(player)
       .subscribe( removedPlayer => {
-        this.players = this.players.filter(p => p.id !== removedPlayer.id);
+        this.players = this.players.filter(p => p._id !== removedPlayer._id);
     });
   }
 }

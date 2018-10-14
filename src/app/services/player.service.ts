@@ -9,7 +9,7 @@ import { Player } from '../models';
 })
 export class PlayerService {
 
-  private readonly base: string = 'http://5bbfedcf59c0e1001337f1ec.mockapi.io/players';
+  private readonly base: string = '/api/players';
 
   constructor(private http: HttpClient) { }
 
@@ -22,11 +22,11 @@ export class PlayerService {
   }
 
   removePlayer(player: Player): Observable<Player> {
-    return this.http.delete<Player>(`${this.base}/${player.id}`);
+    return this.http.delete<Player>(`${this.base}/${player._id}`);
   }
 
   updatePlayer(player: Player): Observable<Player> {
-    return this.http.put<Player>(`${this.base}/${player.id}`, player);
+    return this.http.put<Player>(`${this.base}/${player._id}`, player);
   }
 
 }

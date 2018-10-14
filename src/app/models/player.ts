@@ -1,6 +1,6 @@
 export class Player {
 
-  id: number;
+  _id: number;
   name: string;
   position: string;
   status: object;
