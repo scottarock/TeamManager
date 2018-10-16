@@ -1,9 +1,25 @@
-@import url('https://fonts.googleapis.com/css?family=Archivo');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
 
 * {
   margin: 0px;
   padding: 0px;
-  font-family: Archivo, Avenir, sans-serif;
+  font-family: Ubuntu, sans-serif;
+}
+
+.wrapper {
+  padding: 10px 5%;
+  background-color: powderblue;
+}
+
+.component {
+  padding: 10px 5%;
+  background-color: snow;
+  border: 1px solid steelblue;
+  border-radius: 2px;
+}
+
+.center {
+  text-align: center;
 }
 
 nav {
@@ -24,13 +40,6 @@ nav a:first-child {
   border-left: 0px;
 }
 
-.component {
-  padding: 10px 5%;
-  background-color: snow;
-  border: 1px solid steelblue;
-  border-radius: 2px;
-}
-
 table {
   width: 100%;
 }
@@ -46,4 +55,90 @@ th, td {
 
 th, tr:nth-child(even) {
   background-color: azure;
+}
+
+fieldset {
+  padding: 10px;
+  border: 1px solid navy;
+  border-radius: 2px;
+}
+
+label {
+  display: inline-block;
+  width: 140px;
+  margin-right: 10px;
+  text-align: right;
+}
+
+input {
+  width: 50%;
+  margin-bottom: 10px;
+  padding: 4px 8px;
+  font-size: 1em;
+  box-sizing: border-box;
+  border: 1px solid gainsboro;
+  border-radius: 2px;
+}
+
+form button {
+  float: right;
+  padding: 4px 8px;
+  font-size: 1em;
+  color: snow;
+  background-color: darkgreen;
+  border: 1px solid black;
+  border-radius: 2px;
+}
+
+.warning {
+  margin-left: 155px;
+  margin-bottom: 10px;
+  color: red;
+}
+
+.ng-dirty.ng-invalid:not(form) {
+  border-left: 5px solid red;
+}
+
+.ng-valid[required], .ng-pristine[required] {
+  border-left: 5px solid mediumblue;
+}
+
+.btn-delete {
+  display: inline-block;
+  width: 100%;
+  padding: 4px 8px;
+  font-size: 1em;
+  color: snow;
+  background-color: firebrick;
+  border: 1px solid black;
+  border-radius: 2px;
+}
+
+td button {
+  margin-right: 10px;
+  padding: 4px 8px;
+  font-size: 1em;
+  color: black;
+  background-color: snow;
+  border: 1px solid black;
+  border-radius: 2px;
+}
+
+td button:last-child {
+  margin-right: 0px;
+}
+
+td button.playing {
+  color: snow;
+  background-color: green;
+}
+
+td button.not-playing {
+  color: snow;
+  background-color: red;
+}
+
+td button.undecided {
+  background-color: yellow;
 }

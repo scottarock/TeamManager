@@ -7,10 +7,19 @@
         type="text"
         id="name"
         name="name"
-        [(ngModel)]="player.name"
         required
         minlength="2"
+        [(ngModel)]="player.name"
+        #name="ngModel"
       >
+    </div>
+    <div class="warning" *ngIf="name.errors && name.touched">
+      <div *ngIf="name.errors.required">
+        First name is required
+      </div>
+      <div *ngIf="name.errors.minlength">
+        First name must be at least {{ name.errors.minlength.requiredLength }} characters long
+      </div>
     </div>
     <div>
       <label for="position">Preferred Position:</label>

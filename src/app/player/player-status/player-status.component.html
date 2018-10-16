@@ -1,51 +1,27 @@
 <div class="component">
-  <h1>Player Status - Game {{ game[4] }}</h1>
-  <div class="games">
-    <button
-      (click)="selectGame('game1')"
-      [ngClass]="{'bold': game === 'game1'}"
+  <h1>Player Status - Game {{ game }}</h1>
+  <nav class="center">
+    <a
+      (click)="selectGame('1')"
+      routerLink="1"
+      routerLinkActive="bold"
     >
       Game 1
-    </button>
-    <button
-      (click)="selectGame('game2')"
-      [ngClass]="{'bold': game === 'game2'}"
+    </a>
+    <a
+      (click)="selectGame('2')"
+      routerLink="2"
+      routerLinkActive="bold"
     >
       Game 2
-    </button>
-    <button
-      (click)="selectGame('game3')"
-      [ngClass]="{'bold': game === 'game3'}"
+    </a>
+    <a
+      (click)="selectGame('3')"
+      routerLink="3"
+      routerLinkActive="bold"
     >
       Game 3
-    </button>
-  </div>
-  <table>
-    <thead>
-      <th>Player Name</th>
-      <th>Status</th>
-    </thead>
-    <tbody>
-      <tr *ngFor="let player of players">
-        <td>{{ player.name }}</td>
-        <td class="center">
-          <button
-            (click)="setStatus(player, 'playing')"
-            [ngClass]="{'playing': player.status[game] === 'playing'}">
-            Playing
-          </button>
-          <button
-            (click)="setStatus(player, 'not playing')"
-            [ngClass]="{'not-playing': player.status[game] === 'not playing'}">
-            Not Playing
-          </button>
-          <button
-            (click)="setStatus(player, 'undecided')"
-            [ngClass]="{'undecided': player.status[game] === 'undecided'}">
-            Undecided
-          </button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+    </a>
+  </nav>
+  <router-outlet></router-outlet>
 </div>

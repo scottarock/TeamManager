@@ -1,10 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { PlayerComponent } from './player/player/player.component';
-import { PlayerListComponent } from './player/player-list/player-list.component';
-import { PlayerNewComponent } from './player/player-new/player-new.component';
-import { PlayerStatusComponent } from './player/player-status/player-status.component';
+import * as fromComponents from './player';
 
 const routes: Routes = [
   {
@@ -14,24 +11,30 @@ const routes: Routes = [
   },
   {
     path: 'players',
-    component: PlayerComponent,
+    component: fromComponents.PlayerComponent,
     children: [
       {
         path: 'list',
         pathMatch: 'full',
-        component: PlayerListComponent
+        component: fromComponents.PlayerListComponent
       },
       {
         path: 'addplayer',
         pathMatch: 'full',
-        component: PlayerNewComponent
+        component: fromComponents.PlayerNewComponent
       }
     ]
   },
   {
-    path: 'status/game/:id',
-    pathMatch: 'full',
-    component: PlayerStatusComponent,
+    path: 'status/game',
+    component: fromComponents.PlayerStatusComponent,
+    children: [
+      {
+        path: ':gameId',
+        pathMatch: 'full',
+        component: fromComponents.PlayerGameComponent
+      }
+    ]
   }
 ];
 

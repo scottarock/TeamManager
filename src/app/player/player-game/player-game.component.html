@@ -1,0 +1,28 @@
+<table>
+  <thead>
+    <th>Player Name</th>
+    <th>Status</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let player of players">
+      <td>{{ player.name }}</td>
+      <td class="center">
+        <button
+          (click)="setStatus(player, 'playing')"
+          [ngClass]="{'playing': player.status['game' + game] === 'playing'}">
+          Playing
+        </button>
+        <button
+          (click)="setStatus(player, 'not playing')"
+          [ngClass]="{'not-playing': player.status['game' + game] === 'not playing'}">
+          Not Playing
+        </button>
+        <button
+          (click)="setStatus(player, 'undecided')"
+          [ngClass]="{'undecided': player.status['game' + game] === 'undecided'}">
+          Undecided
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

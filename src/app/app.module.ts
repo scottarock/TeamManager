@@ -5,18 +5,12 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PlayerComponent } from './player/player/player.component';
-import { PlayerListComponent } from './player/player-list/player-list.component';
-import { PlayerNewComponent } from './player/player-new/player-new.component';
-import { PlayerStatusComponent } from './player/player-status/player-status.component';
+import * as fromPlayers from './player';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PlayerComponent,
-    PlayerListComponent,
-    PlayerNewComponent,
-    PlayerStatusComponent,
+    ...fromPlayers.components,
   ],
   imports: [
     BrowserModule,

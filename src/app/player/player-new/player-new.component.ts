@@ -28,7 +28,8 @@ export class PlayerNewComponent implements OnInit {
       game3: "undecided",
     }
     this.playerService.createPlayer(this.player)
-      .subscribe( _player => {
+      .subscribe( player => {
+        console.log(player);
         this.player = new Player();
         this.router.navigateByUrl('/')
     });

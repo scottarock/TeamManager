@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Player } from '../../models';
-import { PlayerService } from '../../services';
-
 @Component({
   selector: 'app-player-status',
   templateUrl: './player-status.component.html',
@@ -10,26 +7,15 @@ import { PlayerService } from '../../services';
 })
 export class PlayerStatusComponent implements OnInit {
 
-  players: Player[] = [];
-  game: string = "game1";
+  game: string = "1";
 
-  constructor(private playerService: PlayerService) { }
+  constructor() { }
 
   ngOnInit() {
-    this.playerService.getPlayers()
-      .subscribe( players => {
-        this.players = players;
-    });
   }
 
-  selectGame(game: string) {
+  selectGame(game) {
     this.game = game;
-  }
-
-  setStatus(player: Player, status: string) {
-    player.status[this.game] = status;
-    this.playerService.updatePlayer(player)
-      .subscribe( _player => {});
   }
 
 }
